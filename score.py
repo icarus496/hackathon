@@ -6,7 +6,10 @@ global scoresum
 scoresum=0
 def score(rectlist1,rectlist2):
     if rectlist1==[] or rectlist2==[]:
+<<<<<<< HEAD
         print 'cat'
+=======
+>>>>>>> origin/master
         return 0
     else:
         global scoresum
@@ -22,11 +25,14 @@ def score(rectlist1,rectlist2):
             dist = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) #calculates distance between 2 mid points of rectangles
             distlist.append(dist)      #logs distance to dist2 array
         for item in range(len(distlist)):
-            score2.append(100-distlist[item])
+            score2.append(100-(distlist[item])/4)
+        print score2
         for item in range(len(score2)):
             n=score2[item]
             scoresum=n+scoresum
         final_score=scoresum/len(score2)
+        if final_score>100:
+            final_score==100
         if final_score<0:
             final_score=0
         return final_score
