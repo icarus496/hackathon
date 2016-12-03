@@ -11,6 +11,7 @@ screencolor = (100,200,255)
 screen.fill(screencolor)
 #main template writing function
 def template():
+    screen.fill(screencolor) #added to work with sam's menu screen
     save=pygame.Rect(0,0,50,25)
     rectlist=[]                                                  #list of rect objects
     while True:
@@ -35,14 +36,5 @@ def template():
         for event in pygame.event.get():                        #making sure I can close the program
             if event.type==pygame.QUIT:
                 sys.exit()
-<<<<<<< HEAD
-        pygame.display.update()                                 #update the screen
-template()
-=======
-<<<<<<< HEAD
-        pygame.display.update()                                 #update the screen
-        screen.fill(screencolor)
-=======
-        pygame.display.update()                                 #update the screen
->>>>>>> origin/master
->>>>>>> origin/master
+        #updating the screen
+        pygame.display.update()
