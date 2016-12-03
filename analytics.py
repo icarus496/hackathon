@@ -20,16 +20,13 @@ def analytics():
     lines2 = l.readlines()
     namescore=[]
     for item in range(len(lines) - 1):
-        print lines[item]
-        print lines[item].strip()
         print float(lines[item].strip())
         namescore.append([int(float(lines[item].strip())), lines2[item]])
     namescore.sort(key=lambda x: x[0])
     namescore.reverse()
-    write(str(lines[item]), [250, x], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
     x=150
     for item in range(len(namescore)):
-        write((str(namescore[item][0])+"                             "+namescore[item][1]),[400,x],pygame.font.Font(pygame.font.match_font('vgafix'),60),(10,21,38))
+        write((str(namescore[item][0])+"                          "+namescore[item][1]),[300,x],pygame.font.Font(pygame.font.match_font('vgafix'),60),(10,21,38))
         x+=100
 
     while True:
