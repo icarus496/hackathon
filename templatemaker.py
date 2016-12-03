@@ -35,5 +35,14 @@ def template():
         for event in pygame.event.get():                        #making sure I can close the program
             if event.type==pygame.QUIT:
                 sys.exit()
+<<<<<<< HEAD
         pygame.display.update()                                 #update the screen
 template()
+=======
+<<<<<<< HEAD
+        pygame.display.update()                                 #update the screen
+        screen.fill(screencolor)
+=======
+        pygame.display.update()                                 #update the screen
+>>>>>>> origin/master
+>>>>>>> origin/master
