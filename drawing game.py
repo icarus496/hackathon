@@ -124,6 +124,7 @@ def namefunc():
 
 
 def menu():
+    namefunc()
     while True:
         mousex=(pygame.mouse.get_pos()[0])                   #return mouse position
         mousey=(pygame.mouse.get_pos()[1])
@@ -149,5 +150,5 @@ def menu():
             if event.type==pygame.QUIT:
                 sys.exit()
         pygame.display.update()
-namefunc()
+menu()
 
