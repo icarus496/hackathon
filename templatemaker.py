@@ -23,4 +23,4 @@ def template():
             if event.type==pygame.QUIT:
                 sys.exit()
         pygame.display.update()                                 #update the screen
-template()
+        screen.fill(screencolor)

@@ -1,6 +1,7 @@
 import pygame
 import time
 import sys
+import templatemaker
 rect=pygame.Rect(300,120,400,175)       #sets params for play game button
 rect2=pygame.Rect(300,450,400,175)      #sets params for analytics button
 select1=pygame.Rect(225,95,525,250)     #sets params for on hover play button
@@ -25,7 +26,9 @@ def menu():
         if opt2==False:
             screen.fill((100,200,255))
         if opt1==True:
-            pygame.draw.rect(screen, (0,0,255), select1)     #increases button size on hover
+            pygame.draw.rect(screen, (0,0,255), select1) #increases button size on hover
+            if pygame.mouse.get_pressed()[0]:
+                templatemaker.template()
         if opt2==True:
             pygame.draw.rect(screen, (0,0,255), select2)     #increases button2 size on hover
         pygame.draw.rect(screen, (0,0,255), rect)            #draws menu buttons
