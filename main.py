@@ -56,4 +56,9 @@ def main(rectlist):
             index = random.randint(0, (len(stencil) - 1))
             del(stencil[index])
             temp_lendiff -= 1
+    userScore = score.score(trace,stencil)
+    f = open("userscores.txt","a")
+    f.write(str(userScore))
+    f.write("\n")
+    f.close()
     return str(int(score.score(trace,stencil)))+'%'
