@@ -1,11 +1,14 @@
 import pygame
 import sys
+#import score
 screen_dimensions = [600,600]
 screen=pygame.display.set_mode(screen_dimensions)
 screencolor=(100,200,255)
 screen.fill(screencolor)
 def main(rectlist):
-    save=pygame.Rect(0,0,50,25)
+    tracing_and_stencil=tracing(rectlist)
+def tracing(rectlist):
+    save=pygame.Rect(0,0,50,25) #early function definitions
     tracelist=[]
     saved=False
     screen.fill(screencolor)
@@ -20,7 +23,6 @@ def main(rectlist):
                 return n
             elif not saved:
                 tracelist.append(pygame.Rect(mousex, mousey, 10, 10))
-                print pygame.Rect(mousex, mousey, 10, 10)
 
 
         #Drawing rectangle
