@@ -6,10 +6,6 @@ global scoresum
 scoresum=0
 def score(rectlist1,rectlist2):
     if rectlist1==[] or rectlist2==[]:
-<<<<<<< HEAD
-        print 'cat'
-=======
->>>>>>> origin/master
         return 0
     else:
         global scoresum
