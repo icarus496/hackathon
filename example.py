@@ -1,10 +1,4 @@
-Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 26 2016, 12:03:00) 
-[GCC 4.2.1 (Apple Inc. build 5577)] on darwin
-Type "copyright", "credits" or "license()" for more information.
->>> import pygame
->>> pygame.init()
-(5, 1)
->>> import pygame
+import pygame
 import random
 import sys
 from time import *
