@@ -39,5 +39,4 @@ def template():
                 sys.exit()
         #updating the screen
         pygame.display.update()
-        print m
         m+=1
