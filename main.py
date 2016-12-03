@@ -5,23 +5,20 @@ screen_dimensions = [600,600]
 screen=pygame.display.set_mode(screen_dimensions)
 screencolor=(100,200,255)
 screen.fill(screencolor)
-def main(rectlist):
-    tracing_and_stencil=tracing(rectlist)
 def tracing(rectlist):
     save=pygame.Rect(0,0,50,25) #early function definitions
-    tracelist=[]
-    saved=False
+    tracelist=[] #list of rects from the traced line
     screen.fill(screencolor)
-    m=0
+    m=0 #timer, to fix a bug. It's there for a reason, trust me
     while True:
         mousex = pygame.mouse.get_pos()[0]
         mousey = pygame.mouse.get_pos()[1]
 
         if pygame.mouse.get_pressed()[0] and m>=150:
             if (mousex in range(50) and mousey in range(25)):
-                n=[rectlist,tracelist]
+                n=[rectlist,tracelist] #stuff to return
                 return n
-            elif not saved:
+            else:
                 tracelist.append(pygame.Rect(mousex, mousey, 10, 10))
 
 
@@ -36,3 +33,7 @@ def tracing(rectlist):
             if event.type==pygame.QUIT:
                 sys.exit()
         m+=1
+def main(rectlist):
+    tracing_and_stencil=tracing(rectlist)
+    stencil=tracing_and_stencil[0]
+    trace=tracing_and_stencil[1]
