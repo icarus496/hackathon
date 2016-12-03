@@ -11,6 +11,7 @@ screencolor = (100,200,255)
 screen.fill(screencolor)
 #main template writing function
 def template():
+    m=0
     screen.fill(screencolor) #added to work with sam's menu screen
     save=pygame.Rect(0,0,50,25)
     rectlist=[]                                                  #list of rect objects
@@ -20,7 +21,7 @@ def template():
 
         mousex = pygame.mouse.get_pos()[0]
         mousey = pygame.mouse.get_pos()[1]
-        if pygame.mouse.get_pressed()[0]:
+        if pygame.mouse.get_pressed()[0] and not(mousex in range(50) and mousey in range(25)) and (m>=100):
             rectlist.append(pygame.Rect(mousex, mousey, 10, 10))#append rectangles to list if mouse is pressed
 
         #Drawing everything should be under here
@@ -38,3 +39,5 @@ def template():
                 sys.exit()
         #updating the screen
         pygame.display.update()
+        print m
+        m+=1

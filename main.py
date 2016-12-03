@@ -7,6 +7,9 @@ screen.fill(screencolor)
 def main(rectlist):
     while True:
         screen.fill(screencolor)
+
+
+        #Drawing rectangles
         for item in range(len(rectlist)):
             pygame.draw.rect(screen,(0,0,0),rectlist[item])
         pygame.display.update()
