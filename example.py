@@ -66,4 +66,3 @@ def main():
            randrect.top+=15
        sleep(0.05)
 main()
-runr
