@@ -115,6 +115,10 @@ def namefunc():
             name+=('z')
             time.sleep(0.15)
         if keysdown[pygame.K_RETURN]:
+            f=open("usernames.txt","a")
+            f.write(name)
+            f.write("\n")
+            f.close()
             return name
         if keysdown[pygame.K_BACKSPACE]:
             del(name[-1])

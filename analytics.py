@@ -12,13 +12,22 @@ def write(str, location, font, color):
         gmovr = myfont.render(str, 1, color)
         screen.blit(gmovr, location)
 def analytics():
+    screen.fill(screencolor)
+    x=150
+    f = open("userscores.txt", "r")
+    l = open("usernames.txt", "r")
+    lines = f.readlines()
+    lines2 = l.readlines()
+    for item in range(len(lines)):
+        write(str(lines[item]), [250, x], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
+        x += 100
+    x=150
+    for item in range(len(lines2)):
+        write(str(lines2[item]), [700, x], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
+        x+=100
     while True:
-
         #if os.path.exists("hackathon./userscores.txt"):
-        f = open ("userscores.txt","r")
-        lines = f.readlines()
         write('Highscores', [390, 80], pygame.font.Font(pygame.font.match_font('vgafix'), 60), (10, 21, 38))
-        write(str(lines[0]),[250, 110], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
         #else
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
