@@ -21,7 +21,7 @@ def template():
 
         mousex = pygame.mouse.get_pos()[0]
         mousey = pygame.mouse.get_pos()[1]
-        if pygame.mouse.get_pressed()[0] and not(mousex in range(50) and mousey in range(25)) and (m>=100):
+        if pygame.mouse.get_pressed()[0] and not(mousex in range(50) and mousey in range(25)) and (m>=10 and not (pygame.Rect(mousex,mousey,10,10) in rectlist)):
             rectlist.append(pygame.Rect(mousex, mousey, 10, 10))#append rectangles to list if mouse is pressed
 
         #Drawing everything should be under here
