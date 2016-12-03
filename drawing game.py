@@ -16,6 +16,112 @@ def write(str,location,font,color):
     myfont = font
     gmovr = myfont.render(str, 1, color)
     screen.blit(gmovr,location)
+def namefunc():
+    name=""
+    while True:
+        write('PRESS ENTER TO CONFIRM',[400, 100], pygame.font.Font(pygame.font.match_font('vgafix'),60),(0,0,255))
+        write('WHAT IS YOUR NAME? :',[400, 200], pygame.font.Font(pygame.font.match_font('vgafix'),60),(0,0,255))
+        write(name,[400,300],pygame.font.Font(pygame.font.match_font('vgafix'),60),(0,0,255))
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                sys.exit()
+        keysdown=pygame.key.get_pressed()
+        if keysdown[pygame.K_a]:
+            name +=('a')
+            time.sleep(0.15)
+        if keysdown[pygame.K_b]:
+            name +=('b')
+            time.sleep(0.15)
+        if keysdown[pygame.K_c]:
+            name +=('c')
+            time.sleep(0.15)
+        if keysdown[pygame.K_d]:
+            name +=('d')
+            time.sleep(0.15)
+        if keysdown[pygame.K_e]:
+            name +=('e')
+            time.sleep(0.15)
+        if keysdown[pygame.K_f]:
+            name +=('f')
+            time.sleep(0.15)
+        if keysdown[pygame.K_g]:
+            name +=('g')
+            time.sleep(0.15)
+        if keysdown[pygame.K_e]:
+            name +=('e')
+            time.sleep(0.15)
+        if keysdown[pygame.K_f]:
+            name +=('f')
+            time.sleep(0.15)
+        if keysdown[pygame.K_g]:
+            name +=('g')
+            time.sleep(0.15)
+        if keysdown[pygame.K_h]:
+            name +=('h')
+            time.sleep(0.15)
+        if keysdown[pygame.K_i]:
+            name +=('i')
+            time.sleep(0.15)
+        if keysdown[pygame.K_j]:
+            name +=('j')
+            time.sleep(0.15)
+        if keysdown[pygame.K_k]:
+            name +=('k')
+            time.sleep(0.15)
+        if keysdown[pygame.K_l]:
+            name +=('l')
+            time.sleep(0.15)
+        if keysdown[pygame.K_m]:
+            name +=('m')
+            time.sleep(0.15)
+        if keysdown[pygame.K_n]:
+            name +=('n')
+            time.sleep(0.15)
+        if keysdown[pygame.K_o]:
+            name +=('o')
+            time.sleep(0.15)
+        if keysdown[pygame.K_p]:
+            name +=('p')
+            time.sleep(0.15)
+        if keysdown[pygame.K_q]:
+            name +=('q')
+            time.sleep(0.15)
+        if keysdown[pygame.K_r]:
+            name +=('r')
+            time.sleep(0.15)
+        if keysdown[pygame.K_s]:
+            name +=('s')
+            time.sleep(0.15)
+        if keysdown[pygame.K_t]:
+            name +=('t')
+            time.sleep(0.15)
+        if keysdown[pygame.K_u]:
+            name +=('u')
+            time.sleep(0.15)
+        if keysdown[pygame.K_v]:
+            name +=('v')
+            time.sleep(0.15)
+        if keysdown[pygame.K_w]:
+            name +=('w')
+            time.sleep(0.15)
+        if keysdown[pygame.K_x]:
+            name +=('x')
+            time.sleep(0.15)
+        if keysdown[pygame.K_y]:
+            name +=('y')
+            time.sleep(0.15)
+        if keysdown[pygame.K_z]:
+            name+=('z')
+            time.sleep(0.15)
+        if keysdown[pygame.K_RETURN]:
+            return name
+        if keysdown[pygame.K_BACKSPACE]:
+            del(name[-1])
+        pygame.display.update()
+
+
+
+
 def menu():
     while True:
         mousex=(pygame.mouse.get_pos()[0])                   #return mouse position
@@ -40,5 +146,5 @@ def menu():
             if event.type==pygame.QUIT:
                 sys.exit()
         pygame.display.update()
-menu()
+namefunc()
 

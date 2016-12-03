@@ -16,7 +16,7 @@ def tracing(rectlist):
         mousex = pygame.mouse.get_pos()[0] #getting mouse x and y
         mousey = pygame.mouse.get_pos()[1]
 
-        if pygame.mouse.get_pressed()[0] and m>=10:
+        if pygame.mouse.get_pressed()[0] and m>=150:
             if (mousex in range(50) and mousey in range(25)):
                 n=[rectlist,tracelist] #stuff to return
                 return n
