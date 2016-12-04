@@ -7,6 +7,10 @@ screen_dimensions = [600,600]
 screen=pygame.display.set_mode(screen_dimensions)
 screencolor=(100,200,255)
 screen.fill(screencolor)
+def write(str,location,font,color):
+    myfont = font
+    gmovr = myfont.render(str, 1, color)
+    screen.blit(gmovr,location)
 def tracing(rectlist):
     save=pygame.Rect(0,0,50,25) #early function definitions
     tracelist=[] #list of rects from the traced line
@@ -30,6 +34,7 @@ def tracing(rectlist):
             pygame.draw.rect(screen, (0, 0, 0), rectlist[item])
         for item in range(len(tracelist)):
             pygame.draw.rect(screen, (255, 255, 255), tracelist[item])
+        write('save', [5, 5], pygame.font.Font(pygame.font.match_font('vgafix'), 20), (0, 255, 0))
         pygame.display.update()
         for event in pygame.event.get():
             if event.type==pygame.QUIT:

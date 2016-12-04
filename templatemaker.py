@@ -3,6 +3,7 @@ import pygame
 import sys
 import main
 import time
+
 #init pygame
 pygame.init()
 #setting up the screen
@@ -11,6 +12,10 @@ screen = pygame.display.set_mode(screen_size)
 screencolor = (100,200,255)
 screen.fill(screencolor)
 #main template writing function
+def write(str,location,font,color):
+    myfont = font
+    gmovr = myfont.render(str, 1, color)
+    screen.blit(gmovr,location)
 def template_selection():
     m=0
     while True:
@@ -21,6 +26,8 @@ def template_selection():
         custom=pygame.Rect(0,500,1000,200)
         pygame.draw.rect(screen,(0,0,255), select_template)
         pygame.draw.rect(screen, (0, 0, 255), custom)
+        write('Writing training template',[400,300], pygame.font.Font(pygame.font.match_font('vgafix'),60),(255,0,0))
+        write('Design a template', [400, 600], pygame.font.Font(pygame.font.match_font('vgafix'), 60),(255,0,0))
         if pygame.mouse.get_pressed()[0] and (pygame.mouse.get_pos()[1] in range(200,400) and m>100):
             for item in range(len(arglist)):
                 templatelist.append(pygame.Rect(arglist[item][0],arglist[item][1],arglist[item][2],arglist[item][3]))
@@ -42,7 +49,6 @@ def template():
     save=pygame.Rect(0,0,50,25)
     rectlist=[]                                                  #list of rect objects
     while True:
-
         #Allowing you to draw
 
         mousex = pygame.mouse.get_pos()[0]
@@ -55,6 +61,7 @@ def template():
         for item in range(len(rectlist)):                       #looping through the rect list and drawing each rectangle in the list
             pygame.draw.rect(screen,(0, 0, 0), rectlist[item])   #same as above
         pygame.draw.rect(screen, (255, 0, 0), save)
+        write('save', [5, 5], pygame.font.Font(pygame.font.match_font('vgafix'), 20), (0, 255, 0))
 
         #checking input
         if mousex in range(50) and mousey in range(25):         #checking if mouse is on the save button

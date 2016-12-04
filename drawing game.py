@@ -149,7 +149,7 @@ def menu():
         pygame.draw.rect(screen, (0,0,255), rect)            #draws menu buttons
         pygame.draw.rect(screen,(0,0,255),rect2)
         write('PLAY GAME', [425, 195], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (0, 255, 0))
-        write('OPTIONS', [425, 525], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (0, 255, 0))
+        write('ANALYTICS', [425, 525], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (0, 255, 0))
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 sys.exit()
