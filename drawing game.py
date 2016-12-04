@@ -141,7 +141,7 @@ def menu():
         if opt1==True:
             pygame.draw.rect(screen, (0,0,255), select1) #increases button size on hover
             if pygame.mouse.get_pressed()[0]:
-                print main.main(templatemaker.template())
+                print main.main(templatemaker.template_selection())
         if opt2==True:
             pygame.draw.rect(screen, (0,0,255), select2)     #increases button2 size on hover
             if pygame.mouse.get_pressed()[0]:

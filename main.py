@@ -16,7 +16,7 @@ def tracing(rectlist):
         mousex = pygame.mouse.get_pos()[0] #getting mouse x and y
         mousey = pygame.mouse.get_pos()[1]
 
-        if pygame.mouse.get_pressed()[0] and m>=150:
+        if pygame.mouse.get_pressed()[0] and m>=50:
             if (mousex in range(50) and mousey in range(25)):
                 n=[rectlist,tracelist] #stuff to return
                 return n
@@ -35,6 +35,7 @@ def tracing(rectlist):
             if event.type==pygame.QUIT:
                 sys.exit()
         time.sleep(0.01)
+        print m
         m+=1
 def main(rectlist):
     tracing_and_stencil=tracing(rectlist)
@@ -49,13 +50,20 @@ def main(rectlist):
             index = random.randint(0, (len(trace) - 1))
             del(trace[index])
             temp_lendiff -= 1
-    else:
+    elif stencil_length>trace_length and trace_length!=0:
         length_diff=stencil_length-trace_length
         temp_lendiff=length_diff
         while temp_lendiff != 0:
             index = random.randint(0, (len(stencil) - 1))
             del(stencil[index])
             temp_lendiff -= 1
+    else:
+        userScore=0
+        f = open("userscores.txt", "a")
+        f.write(str(userScore))
+        f.write("\n")
+        f.close()
+        return str(int(score.score(trace, stencil))) + '%'
     userScore = score.score(trace,stencil)
     f = open("userscores.txt","a")
     f.write(str(userScore))

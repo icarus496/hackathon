@@ -22,13 +22,12 @@ def score(rectlist1,rectlist2):
             distlist.append(dist)      #logs distance to dist2 array
         for item in range(len(distlist)):
             score2.append(100-(distlist[item])/4)
-        print score2
         for item in range(len(score2)):
             n=score2[item]
             scoresum=n+scoresum
         final_score=scoresum/len(score2)
         if final_score>100:
-            final_score==100
+            final_score=100
         if final_score<0:
             final_score=0
         return final_score
