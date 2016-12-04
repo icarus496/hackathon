@@ -18,13 +18,17 @@ def analytics():
     l = open("usernames.txt", "r")
     lines = f.readlines()
     lines2 = l.readlines()
-    for item in range(len(lines)):
-        write(str(lines[item]), [250, x], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
-        x += 100
+    namescore=[]
+    for item in range(len(lines) - 1):
+        print float(lines[item].strip())
+        namescore.append([int(float(lines[item].strip())), lines2[item]])
+    namescore.sort(key=lambda x: x[0])
+    namescore.reverse()
     x=150
-    for item in range(len(lines2)):
-        write(str(lines2[item]), [700, x], pygame.font.Font(pygame.font.match_font('vgafix'), 40), (10, 21, 38))
+    for item in range(len(namescore)):
+        write((str(namescore[item][0])+"                          "+namescore[item][1]),[300,x],pygame.font.Font(pygame.font.match_font('vgafix'),60),(10,21,38))
         x+=100
+
     while True:
         #if os.path.exists("hackathon./userscores.txt"):
         write('Highscores', [390, 80], pygame.font.Font(pygame.font.match_font('vgafix'), 60), (10, 21, 38))
